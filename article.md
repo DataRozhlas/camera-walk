@@ -16,6 +16,6 @@ options: [noheader, nopic] #wide, noheader (, nopic)
 			<input type="submit" id="inp-btn" value="Ukázat kamery">
 		</div>
     </form>
-	<div id="info">Napiš kam jdeš a čubrň! FYI funguje to jenom v Praze.</div>
+	<div id="info">Zadejte, odkud a kam v Praze jdete. Apliakce odhadne, kolik kamer vás uvidí.</div>
 	<div id="mapa"></div>
 </div>

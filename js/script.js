@@ -1,26 +1,31 @@
 ﻿import "./byeie"; // loučíme se s IE
 import { cams } from "./cams"
 
-Loader.load()
-
 let map = L.map('mapa')
-map.fitBounds([
-  [50.180416, 14.709320], //phorni
-  [49.939731, 14.218369], //lspodni 
-])
+map.scrollWheelZoom.disable()
 
 L.tileLayer('https://mapserver.mapy.cz/turist-m/{z}-{x}-{y}', {
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">Mapy.cz, a.s.</a>, &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+  attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">Mapy.cz, a.s.</a>, &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 }).addTo(map);
 
-const sezLogo = L.control({position: 'bottomleft'});
+const sezLogo = L.control({position: 'bottomleft'})
 sezLogo.onAdd = function(map){
-    var div = L.DomUtil.create('div', 'sez-logo');
-    div.innerHTML= '<a target="_blank" href="https://mapy.cz"><img src="https://api.mapy.cz/img/api/logo.svg"/>';
-    return div;
+  var div = L.DomUtil.create('div', 'sez-logo')
+  div.innerHTML= '<a target="_blank" href="https://mapy.cz"><img src="https://api.mapy.cz/img/api/logo.svg"/>'
+  return div
 }
-sezLogo.addTo(map);
+sezLogo.addTo(map)
 let routeCams = L.featureGroup().addTo(map) // prázná vrstva na vložení trasy a kamer
+cams.forEach(cam => {
+  L.polygon(flipCoords(cam), {
+    color: '#de2d26',
+    opacity: 0.7,
+    weight: 1,
+    fillColor: '#de2d26',
+    fillOpacity: 0.1,
+  }).addTo(routeCams)
+})
+map.fitBounds(routeCams.getBounds())
 
 let startEnd
 
@@ -41,14 +46,23 @@ function foundRoute(route) {
       seenCams.push(cam)
     }
   })
-  document.getElementById('info').innerHTML = `Po cestě tě uvidí ${seenCams.length} kamer!`
+  document.getElementById('info').innerHTML = `Po cestě se octnete v dosahu asi ${seenCams.length} kamer.`
   routeCams.clearLayers() // úklid mapy po předchozím hledání
-  // trasu do mapy
-  L.polyline(flipCoords(trackCoords), {color: 'red'}).addTo(routeCams)
   // kamery do mapy
   seenCams.forEach(cam => {
-    L.polygon(flipCoords(cam), {color: 'blue'}).addTo(routeCams)
+    L.polygon(flipCoords(cam), {
+      color: '#de2d26',
+      opacity: 0.7,
+      weight: 1,
+      fillColor: '#de2d26',
+      fillOpacity: 0.1,
+    }).addTo(routeCams)
   })
+  // trasu do mapy
+  L.polyline(flipCoords(trackCoords), {
+    color: '#08519c',
+    weight: 2,
+  }).addTo(routeCams)
   // zoom na vysledek
   map.fitBounds(routeCams.getBounds())
 }
@@ -59,7 +73,7 @@ function gcode(query) {
 
 function gcodeResp(geocoder) {
   if (!geocoder.getResults()[0].results.length) {
-      console.log('Neznama adresa')
+      document.getElementById('info').innerHTML = '<span style="color: #de2d26;">Adresy se nepodařilo nalézt.</span>'
       return;
   }
   const res = geocoder.getResults()[0].results[0].coords
