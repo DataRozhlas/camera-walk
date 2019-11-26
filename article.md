@@ -16,6 +16,6 @@ options: [noheader, nopic] #wide, noheader (, nopic)
 			<input type="submit" id="inp-btn" value="Ukázat kamery">
 		</div>
     </form>
-	<div id="info">Zadejte, odkud a kam v Praze jdete. Apliakce odhadne, kolik kamer vás uvidí.</div>
+	<div id="info">Zadejte, odkud a kam v Praze jdete. Aplikace odhadne, kolik kamer vás uvidí.</div>
 	<div id="mapa"></div>
 </div>
