@@ -7,4 +7,47 @@
 #info {
     margin-top: 10px;
     margin-bottom: 10px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.inputs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 10px 10px;
+}
+
+#gcode-from, #gcode-to {
+    width: 30%;
+    min-width: 150px;
+    margin: 5px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border-radius: 4px;
+    border: 1px solid;
+    transition: border-color .15s ease-in-out;
+}
+
+
+@media only screen and (max-width: 600px) {
+    #gcode-from, #gcode-to {
+        width: 100%;
+    }
+  }
+
+#inp-btn {
+    padding: .375rem .75rem;
+    color: #fff;
+    background-color: #6c757d;
+    border-color: #6c757d;
+    border-radius: .25rem;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    border-style: none;
+}
+
+#inp-btn:hover {
+    color: #fff;
+    background-color: #5a6268;
+    border-color: #545b62;
 }
