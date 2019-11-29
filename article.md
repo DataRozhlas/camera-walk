@@ -1,7 +1,7 @@
 title: "Tisícovce pražských kamer se nevyhnete. Zkuste si, kolik vás uvidí cestou po městě"
 perex: "Pokud se od budovy Českého rozhlasu na Vinohradech vydáte pěšky na Staroměstské náměstí, minete zhruba šedesát bezpečnostních kamer, za krátkou cestu na hlavní nádraží pak na tři desítky. Celkem na pořádek v Praze dohlíží 1100 městských kamer, další patří soukromníkům. V interaktivní mapě, kterou připravil datový tým serveru iROZHLAS.cz, zjistíte, kde všude na ně narazíte."
-coverimg: https://www.irozhlas.cz/sites/default/files/styles/zpravy_snowfall/public/images/03676350.jpeg?itok=9h75HnN1
-coverimg_note: "Foto: Fotobanka Pixabay"
+coverimg: https://www.irozhlas.cz/sites/default/files/styles/zpravy_snowfall/public/uploader/profimedia-043342082_191127-173040_miz.jpg?itok=RG1lecHS
+coverimg_note: "Foto: Petr Topič/MAFRA"
 styles: ['https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.css']
 libraries: ['https://api.mapy.cz/loader.js', 'https://cdnjs.cloudflare.com/ajax/libs/Turf.js/5.1.5/turf.min.js', 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.js'] #jquery, d3, highcharts, datatables
 options: [] #wide, noheader (, nopic)
@@ -26,7 +26,7 @@ _Server iROZHLAS připravil mapu, která vám naplánuje nejkratší pěší tra
 </div>
 </wide>
 
-Proti plánu se už [postavili](https://www.irozhlas.cz/zpravy-domov/praha-kamery-na-rozpoznavani-obliceju-primator-zdenek-hrib-hamacek_1911211706_jak) jak pirátský primátor Zdeněk Hřib, tak i šéf bezpečnostní komise magistrátu Petr Hlubuček (STAN), předseda TOP 09 Jiří Pospíšil a šéf opozičního ANO Patrik Nacher. 
+Proti plánu se už [postavili](https://www.irozhlas.cz/zpravy-domov/praha-kamery-na-rozpoznavani-obliceju-primator-zdenek-hrib-hamacek_1911211706_jak) jak pirátský primátor Zdeněk Hřib, tak i šéf bezpečnostní komise magistrátu Petr Hlubuček (STAN), předseda pražské TOP 09 Jiří Pospíšil a šéf pražské buňky opozičního ANO Patrik Nacher. 
 
 "Nechci podporovat Velkého bratra v čínském stylu," napsal na twitter Hřib, Nacher zase označil automatický dohled za "děsivě orwellovský".
 
@@ -50,4 +50,6 @@ Praha [seznam kamer](http://www.praha.eu/jnp/cz/o_meste/magistrat/odbory/oddelen
 
 Interaktivní mapa tak počítá s výčtem průmyslových kamer, které [zaznamenali](https://wiki.openstreetmap.org/wiki/Tag:man_made%3Dsurveillance) přispěvatelé [komunitní mapy OpenStreetMap](https://openstreetmap.cz/), těch je 948. Výpočet je přibližný, rozhled jednotlivých kamer se navíc značně liší – některé jsou umístěné na střechách panelových domů, jiné zase nízko v ulicích.
 
-Mapa proto pracuje se 200metrovým okruhem okolo každé kamery, což je vzdálenost, kterou výrobci výkonných průmyslových kamer [inzerují](https://www.getscw.com/the-lookout-26zv-2mp-1080p-ip-ptz-camera-with-30x-optical-zoom.php) jako efektivní pro rozpoznání konkrétní osoby, např. podle barevné kombinace oblečení nebo stylu chůze. Vzdálenost nutná pro automatickou identifikace dle obličeje je o poznání menší.
+Mapa proto pracuje se 200metrovým okruhem okolo každé kamery. "Moderní běžně užívané kamerové systémy mohou spolehlivě rozeznávat obličeje za standardních podmínek na vzdálenost v řádu několika desítek metrů. Teoreticky, za použití špičkové bezpečnostní kamery a optimálních podmínek je to až na vzdálenost 200 metrů," napsal serveru iROZHLAS.cz Vladimír Mařík jr. ze společnosti CertiCon, která se kamerovými systémy zabývá. 
+
+Obdobnou vzdálenost [inzerují](https://www.getscw.com/the-lookout-26zv-2mp-1080p-ip-ptz-camera-with-30x-optical-zoom.php) i další výrobci výkonných průmyslových kamer jako efektivní pro rozpoznání konkrétní osoby, např. podle barevné kombinace oblečení.
